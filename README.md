@@ -19,3 +19,4 @@ Nič še narejenega, samo ustvarjen hello world projekt z fullscreen activitijem
 
 
 Rok za končanje testne verzije aplikacije z dvema igricama: Ponedeljek, 28.5.
+Da gre v začetku junija lahko na testiranje, pa da bomo meli feedback za vsaj dva tedna testiranja v končnem poročilu...
