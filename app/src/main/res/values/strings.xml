@@ -2,5 +2,9 @@
     <string name="app_name">Pub Pal</string>
 
     <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="dummy_content"></string>
+
+    <string name="title_activity_bottle">Spin the Bottle</string>
+
+    <string name="title_activity_nhie">nhie</string>
 </resources>

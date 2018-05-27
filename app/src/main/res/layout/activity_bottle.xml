@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0099cc"
-    tools:context=".FullscreenActivity">
+    tools:context=".bottle">
 
     <!-- The primary full-screen view. This can be replaced with whatever view
          is needed to present your content, e.g. VideoView, SurfaceView,
          TextureView, etc. -->
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/woodtexture" />
@@ -47,31 +47,32 @@
         </LinearLayout>
 
         <ImageButton
-            android:id="@+id/button1"
+            android:id="@+id/buttonback"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:layout_marginTop="220dp"
+            android:layout_marginTop="460dp"
+            android:layout_weight="1"
             android:background="@android:color/transparent"
-            app:srcCompat="@drawable/nevereverbutton" />
+            app:srcCompat="@drawable/back" />
 
         <ImageButton
-            android:id="@+id/button2"
+            android:id="@+id/info1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="500dp"
-            android:layout_marginTop="220dp"
+            android:layout_marginLeft="790dp"
+            android:layout_marginTop="460dp"
             android:background="@android:color/transparent"
-            app:srcCompat="@drawable/spinbottlebutton" />
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="256dp"
-            android:layout_marginTop="0dp"
-            app:srcCompat="@drawable/logo" />
+            app:srcCompat="@drawable/info" />
 
     </FrameLayout>
+
+    <ImageView
+        android:id="@+id/bottleimage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="220dp"
+        android:layout_marginTop="75dp"
+        app:srcCompat="@drawable/bottle" />
 
 </FrameLayout>
