@@ -42,7 +42,7 @@ public class bottle extends AppCompatActivity {
 
 
 
-    Dialog myDialog, myDialogTruth;
+    Dialog myDialog, myDialogTruth, myDialogInfo;
 
 
     TextView truthText;
@@ -83,6 +83,56 @@ public class bottle extends AppCompatActivity {
             }
         });
 
+        final Context a = this;
+
+        buttoninfo = (ImageButton) findViewById(R.id.info1);
+        buttoninfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myDialogInfo = new Dialog(a, R.style.stildialog);
+                myDialogInfo.setCanceledOnTouchOutside(false);
+
+                myDialogInfo.getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
+
+                myDialogInfo.getWindow().addFlags(WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM | WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
+                myDialogInfo.getWindow().getDecorView().setSystemUiVisibility(
+                        View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                                | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
+
+                myDialogInfo.setContentView(R.layout.bottleinfo);
+                myDialogInfo.setTitle("Info");
+
+                myDialogInfo.findViewById(R.id.play).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        myDialogInfo.dismiss();
+
+                        mContentView.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                spinTheBottle();
+                            }
+                        });
+
+                    }
+                });
+
+                myDialogInfo.show();
+
+
+                myDialogInfo.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
+
+
+
+
+            }
+        });
+
         bottleimg = (ImageView) findViewById(R.id.bottleimage);
 
         mContentView.setOnClickListener(new View.OnClickListener() {
@@ -100,7 +150,7 @@ public class bottle extends AppCompatActivity {
     private View mControlsView;
 
 
-    ImageButton buttonback;
+    ImageButton buttonback, buttoninfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -121,6 +171,9 @@ public class bottle extends AppCompatActivity {
     private void spinTheBottle() {
 
         mContentView.setOnClickListener(null);
+        buttoninfo.setOnClickListener(null);
+        buttoninfo.setVisibility(View.GONE);
+        buttonback.setVisibility(View.GONE);
 
         int angle = rand.nextInt(360);
 
@@ -221,6 +274,55 @@ public class bottle extends AppCompatActivity {
                             }
                         });
 
+                        buttoninfo.setVisibility(View.VISIBLE);
+                        buttonback.setVisibility(View.VISIBLE);
+                        buttoninfo.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                myDialogInfo = new Dialog(a, R.style.stildialog);
+                                myDialogInfo.setCanceledOnTouchOutside(false);
+
+                                myDialogInfo.getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
+
+                                myDialogInfo.getWindow().addFlags(WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM | WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
+                                myDialogInfo.getWindow().getDecorView().setSystemUiVisibility(
+                                        View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                                                | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                                                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                                                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                                                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                                                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
+
+                                myDialogInfo.setContentView(R.layout.bottleinfo);
+                                myDialogInfo.setTitle("Info");
+
+                                myDialogInfo.findViewById(R.id.play).setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        myDialogInfo.dismiss();
+
+                                        mContentView.setOnClickListener(new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View view) {
+                                                spinTheBottle();
+                                            }
+                                        });
+
+                                    }
+                                });
+
+                                myDialogInfo.show();
+
+
+                                myDialogInfo.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
+
+
+
+
+                            }
+                        });
+
                     }
                 });
 
@@ -280,6 +382,57 @@ public class bottle extends AppCompatActivity {
                                 spinTheBottle();
                             }
                         });
+
+                        buttoninfo.setVisibility(View.VISIBLE);
+                        buttonback.setVisibility(View.VISIBLE);
+                        buttoninfo.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                myDialogInfo = new Dialog(a, R.style.stildialog);
+                                myDialogInfo.setCanceledOnTouchOutside(false);
+
+                                myDialogInfo.getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
+
+                                myDialogInfo.getWindow().addFlags(WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM | WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
+                                myDialogInfo.getWindow().getDecorView().setSystemUiVisibility(
+                                        View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                                                | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                                                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                                                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                                                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                                                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
+
+                                myDialogInfo.setContentView(R.layout.bottleinfo);
+                                myDialogInfo.setTitle("Info");
+
+                                myDialogInfo.findViewById(R.id.play).setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        myDialogInfo.dismiss();
+
+                                        mContentView.setOnClickListener(new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View view) {
+                                                spinTheBottle();
+                                            }
+                                        });
+
+                                    }
+                                });
+
+                                myDialogInfo.show();
+
+
+                                myDialogInfo.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
+
+
+
+
+                            }
+                        });
+
+
 
                     }
                 });
@@ -410,36 +563,35 @@ public class bottle extends AppCompatActivity {
                         "Tell your worst joke",
                         "Mix beer with vodka",
                         "Show everything that\'s in your pockets",
-                        "Declare what\'s your true love",
+                        "Declare your true love",
                         "Tell the person playing with you that you love them",
-                        "Challenge the other player to arm wrestling",
-                        "Everytime someone performs a dare yell LOSER",
+                        "Challenge another player to an arm wrestle",
+                        "Yell \"LOSER\" every time someone performs a dare",
                         "Go 10 minutes without drinking",
                         "Go to the toilet and wash your face",
-                        "Call McDonalds and ask if they sell Whoppers",
                         "Let someone check through your phone for 1 minute",
                         "Act like a waiter and take someone\'s order",
                         "Call Burger King and ask if they sell Big Mac",
                         "Chug your drink",
-                        "Kiss or brofist the person opposite of you. Depenending on the gender",
+                        "Kiss or brofist the person opposite of you. depenending on the gender",
                         "Talk in a fake accent for the rest of the game",
                         "Drink a glass of water",
-                        "Stare at the ground ",
+                        "Stare at the ground",
                         "Text the 3rd person in your recent contacts list",
                         "Let one of the players text someone from your phone",
                         "Give someone else your drink",
                         "Spend the next round sitting on someone\'s lap",
                         "Dance with the player in front of you",
-                        "Send a text to your ex: \"Can i come over?\"",
+                        "Send a text to your ex: \"Can I come over?\"",
                         "Take an instagram photo",
                         "Stare at a random person with anger",
                         "Choose a player to have a thumb war with. Loser has to drink!",
                         "Show everyone the last 2 text messages you sent",
-                        "Do a celebrity impression. If the group can\'t guess, you drink",
+                        "Do a celebrity impression. If the group can\'t guess who it is, you drink!",
                         "Tell everyone who you would fuck right now",
                         "Do a sexy face photo and make it your profile picture for the night.",
                         "Name a color. Everyone wearing that color has to drink",
-                        "For however long you can hold an ice cube in your mouth the group had to drink",
+                        "For however long you can hold an ice cube in your mouth the group has to drink",
                         "The next 3 choices you make have to be truths",
                         "Switch seats with the drunkest player",
                         "Send a friend request to a random person on facebook",
@@ -452,7 +604,7 @@ public class bottle extends AppCompatActivity {
                         "Drop a shot into a glass of beer and chug!",
                         "Drink your beer super slowly",
                         "Ask the waitress who the sexiest person at the table is",
-                        "How many songs Beatles songs can you name? For every one, the group has to drink",
+                        "How many Beatles songs can you name? For every one, the group has to drink",
                         "Leave the bar and go back in",
                         "You can give away the next dare you get to any person at this table!",
                         "High five everybody at the table",
@@ -478,7 +630,7 @@ public class bottle extends AppCompatActivity {
                         "Send a love letter to someone on Facebook",
                         "Post a video of you singing and share it on your social media account",
                         "Go outside and try to hug the next person that walks by",
-                        "Give a kiss to each player in the room. A peck on the lips is okay",
+                        "Give a kiss to each player at the table. A peck on the lips is okay",
                         "Go outside and pretend that you are an airplane for 2 minutes",
                         "Lick ear of a person on your left",
                         "Touch your friends nose with your tongue only",
@@ -487,7 +639,7 @@ public class bottle extends AppCompatActivity {
                         "Prank call someone and tell them that you are horny",
                         "Do a belly dance",
                         "Give someone your phone and let them send one text to anyone in your contacts",
-                        "Sniff the armpits of everyone in the room",
+                        "Sniff the armpits of someone in the room",
                         "Let the group look through your phone for 2 minutes",
                         "Stick your arm into the trash can past your elbow",
                         "Get slapped on the face by the person of your choosing",
@@ -495,7 +647,7 @@ public class bottle extends AppCompatActivity {
                         "Go to the bathroom, take off your underwear and put it on your head. Wear it on your head for the rest of the game",
                         "Act like whatever animal someone yells out for the next 1 minute",
                         "Call the 7th contact in your phone and sing them 30 seconds of a song that the group chooses",
-                        "Ask a random girl/boy for a kiss, if she/he ok, go for it"
+                        "Ask a random girl/boy for a kiss, if she/he agrees, go for it"
                 };
 
         public int index_truth = -1;
@@ -540,12 +692,12 @@ public class bottle extends AppCompatActivity {
                         "Do you have an online dating profile?",
                         "Have you ever stripped?",
                         "If you could make someone in this room your slave who would you pick and what would you make them do?",
-                        "What is the best gift you have ever given someone? ",
+                        "What is the best gift you have ever given someone?",
                         "What color is your underwear?",
                         "Have you ever been arrested?",
                         "Have you ever shoplifted?",
                         "What parts of your body do you shave?",
-                        "Who in this room has the best looking mom?",
+                        "Who at the table has the best looking mom?",
                         "Which two people in this room would make the worst couple?",
                         "What disney character do you think is the hottest?",
                         "Have you ever gotten fired from a job? Why?",
@@ -576,7 +728,7 @@ public class bottle extends AppCompatActivity {
                         "How many selfies do you take a month?",
                         "Were you ever in a car accident?",
                         "What is something you\'ve done to try to be cooler?",
-                        "If you could use one swear word for the rest of your life, which would you choose?",
+                        "If you could use only one swearword for the rest of your life, which one would you choose?",
                         "Have you ever peed yourself?",
                         "What sport did you always want to try?",
                         "When was the last time you had a confession in church?",

@@ -27,7 +27,7 @@
             android:layout_marginTop="20dp"
             android:fontFamily="sans-serif"
             android:gravity="center_vertical"
-            android:text='The rules are simple. Arrange yourselves in a circle, place the tablet on the table and take turns spinning the bottle. Each player has to chose "Truth" or "Dare" and finish the given challenge. You can bend the rules a little, the main point is to have fun!'
+            android:text='The rules are simple. If You have done the action that is displayed on the screen at least once, you have to drink. Once everyone finishes drinking, You can move on to the next action.'
             android:textAlignment="center"
             android:textColor="@android:color/holo_orange_light"
             android:textSize="36sp"
